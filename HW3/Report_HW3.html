@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CS682 HW3</title>
+</head>
+<body>
+<h1 style="text-align:center">HW3 Report</h1>
+
+<br/>
+<h2>Problem 1</h2>
+<p>Computed the grey level and color edges as a part of Problem 2 and Problem 3</p>
+
+<h2>Problem 2</h2>
+<h3>Grey Image computations</h3>
+<p>Following is an example color image for wich different modifications and computations will be shown throughout the report:</p>
+<img src="Report/Grey/grey.jpg" alt="grey.jpg" width="500" height="400" style="width:auto;">
+</br></br>
+
+<p>Following is the image after applying canny operator:</p>
+<img src="Report/Grey/afterCanny.jpg" alt="afterCanny.jpg" width="500" height="400" style="width:auto;">
+</br></br>
+
+<p>Following is the image after applying canny mask on the image:</p>
+<img src="Report/Grey/afterMask.jpg" alt="afterMask.jpg" width="500" height="400" style="width:auto;">
+</br></br>
+
+<p>Following are the X direction and Y direction vector images respectively:</p>
+<table>
+<tr>
+<td><h3>X-Direction:</h3>
+<img src="Report/Grey/afterSobelX.jpg" alt="afterSobelX.jpg" height="350" style="width:auto;"></td>
+<td><h3>Y-Direction:</h3>
+<img src="Report/Grey/afterSobelY.jpg" alt="afterSobelY.jpg" height="350" style="width:auto;"></td>
+</tr>
+</table>
+<br/><br/>
+
+<p>Following are the magnitude and direction(theta) images respectively:</p>
+<table>
+<tr>
+<td><h3>Magnitude:</h3>
+<img src="Report/Grey/magnitude.jpg" alt="magnitude.jpg" height="350" style="width:auto;"></td>
+<td><h3>Theta:</h3>
+<img src="Report/Grey/theta.jpg" alt="theta.jpg" height="350" style="width:auto;"></td>
+</tr>
+</table>
+<br/><br/>
+
+<p>Following is the theta/10 image:</p>
+<img src="Report/Grey/theta_afterDivisionWith10.jpg" alt="theta_afterDivisionWith10.jpg" width="400" height="400" style="width:auto;">
+
+<p>Following is the computed histogram:</p>
+<img src="Report/Grey/Histogram.png" alt="Histogram.png" width="500" height="400" style="width:auto;">
+<br/><br/>
+
+<h2>Problem 3</h2>
+<h3>Color image computations</h3>
+<p>Following is an example color image for wich different modifications and computations will be shown throughout the report:</p>
+<img src="Report/Color/ST2MainHall4036_Original.jpg" alt="ST2MainHall4036_Original.jpg" width="500" height="400" style="width:auto;">
+</br></br>
+
+<p>Following is the image after applying canny operator:</p>
+<img src="Report/Color/afterCanny.jpg" alt="afterCanny.jpg" width="500" height="400" style="width:auto;">
+</br></br>
+
+<p>Following is the image after applying canny mask on the image:</p>
+<img src="Report/Color/afterMask.jpg" alt="afterMask.jpg" width="500" height="400" style="width:auto;">
+</br></br>
+
+<p>Following are the three color channels blue, green and red respectively of the masked image:</p>
+<table>
+<tr>
+<td><img src="Report/Color/blueChannel.jpg" alt="blueChannel.jpg" width="200" height="200" style="width:auto;"></td>
+<td><img src="Report/Color/greenChannel.jpg" alt="greenChannel.jpg" width="200" height="200" style="width:auto;"></td>
+<td><img src="Report/Color/redChannel.jpg" alt="redChannel.jpg" width="200" height="200" style="width:auto;"></td>
+</tr>
+</table>
+
+<p>Following are the X direction and Y direction vector images respectively:</p>
+<table>
+<tr>
+<td><h3>X-Direction:</h3>
+<img src="Report/Color/afterVectorX.jpg" alt="afterVectorX.jpg" height="350" style="width:auto;"></td>
+<td><h3>Y-Direction:</h3>
+<img src="Report/Color/afterVectorY.jpg" alt="afterVectorY.jpg" height="350" style="width:auto;"></td>
+</tr>
+</table>
+<br/><br/>
+
+<p>Following are the magnitude and direction(theta) images respectively:</p>
+<table>
+<tr>
+<td><h3>Magnitude:</h3>
+<img src="Report/Color/magnitude.jpg" alt="magnitude.jpg" height="350" style="width:auto;"></td>
+<td><h3>Theta:</h3>
+<img src="Report/Color/theta.jpg" alt="theta.jpg" height="350" style="width:auto;"></td>
+</tr>
+</table>
+<br/><br/>
+
+<p>Following is the theta/10 image:</p>
+<img src="Report/Color/thetaDividedBy10.jpg" alt="thetaDividedBy10.jpg" width="400" height="400" style="width:auto;">
+
+<p>Following is the computed histogram:</p>
+<img src="Report/Color/histogram.png" alt="histogram.png" width="500" height="400" style="width:auto;">
+<br/><br/>
+
+<h2>Problem 4a, Problem 4b and Problem 5:</h2>
+<p>Wrote two functions: hist_intersection() and chi_squared_measure() to test histogram comparison on the image sequence of 99 images. Following are the results visualized as a heatmap:</p>
+
+<table>
+<tr><td><h3>Grey Images comparison</h3></td></tr>
+<tr>
+<td><h4 style="text-align:center">Histogram intersection method</h4></td>
+<td><h4 style="text-align:center">Chi-squared measure</h4></td>
+</tr>
+<tr>
+<td><img src="histIntCompGrey.png" alt="histIntCompGrey.png" height="400" style="width:auto;"></td>
+<td><img src="histChiSqrGrey.png" alt="histChiSqrGrey.png" height="400" style="width:auto;"></td>
+</tr>
+<tr><td><h3>Color Images comparison</h3></td></tr>
+<tr>
+<td><h4 style="text-align:center">Histogram intersection method</h4></td>
+<td><h4 style="text-align:center">Chi-squared measure</h4></td>
+</tr>
+<tr>
+<td><img src="histIntCompColor.png" alt="histIntCompColor.png" height="400" style="width:auto;"></td>
+<td><img src="histChiSqrColor.png" alt="histChiSqrColor.png" height="400" style="width:auto;"></td>
+</tr>
+</table>
+<br/><br/>
+
+<p>Following is the screenshot of a part of the extra credit home work I tried for computing color gradients using eigenvalues and eigen vectors:</p>
+<img src="ExtraCreditPart.png" alt="ExtraCreditPart.png" >
+
+<p><b>Please click <a href="HW3Script.py"><em>here</em></a> to view the python script page which produced the above results.</b></p>
+</body>
+</html>

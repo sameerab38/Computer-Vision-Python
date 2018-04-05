@@ -1,0 +1,32 @@
+Report:
+
+1. I downloaded and installed Python2.7 version, OpenCV, Numpy and Scipy.
+2. Took a color picture of mine and resized it to 1010 x 994 pixels. Saved it on the name HW1.jpg
+3. Converted the color picture into gray scale using: cv2.imread('HW1.jpg',0) function. Saved it as HW1gray.jpg
+4. Then I made the following 6 transformations on the color image:
+	a. Blurring
+	   Used the function: cv2.blur(img, (10,10)) to apply changes on HW1.jpg. I chose the 10x10 kernel to average the pixes values. So in the output there is a smoothening effect.
+	b. Change the color scheme
+ 	   Used the function: b,g,r = cv2.split(img) to split the image into three different intensity arrays for each color channel. Then used the function cv2.merge([g,r,b]) to jumble and merge the three arrays.
+	c. Change it to canny image
+	   Used the function cv2.Canny(img, 50, 240) to detect the edges. The second and third arguments of this function are called the low and high threshold values respectively. An edge is marked strong if the gradient value is above the high threshold value. An edge is tracked from this point till the gradient value falls below the low threshold value. As these threshold values are increased, weaker edges are ignored.
+	d. Sharpening
+	   Used the functions: kernel_sharpen_1 = np.array([[-1,-1,-1], [-1,9,-1], [-1,-1,-1]]) to define the kernel of size 3x3 and cv2.filter2D(img, -1, kernel_sharpen_1) to scan the kernel over entire image.
+	e. Edge Enhancement
+	   Used the functions: kernel_sharpen_2 = np.array([[-1,-1,-1,-1,-1],[-1,2,2,2,-1],[-1,2,8,2,-1],[-1,2,2,2,-1],[-1,-1,-1,-1,-1]]) / 8.0 to define the kernel of size 5x5 and normalize it and cv2.filter2D(img, -1, kernel_sharpen_2) to scan the kernel over entire image. This function makes the image look more natural.
+	f. Embossing:
+	   Used the functions: kernel_emboss = np.array([[0,-1,-1],[1,0,-1],[1,1,0]]) to define the 3x3 kernel and applied the kernels to the image and added an offset of 128 to achieve the embossing effect: cv2.filter2D(img, -1, kernel_emboss) + 128. In the kernel, the current pixel value is replaced by the difference of the neighboring pixel values in south east direction to create a shadow effect.
+
+5. Made the following 7 transformations on the gray image:
+	a. Median Blur:
+	   Used the function: cv2.medianBlur(img,5) to remove the noise. The second argument is kernel size. This function computes the median of all the pixels under the kernel window and replaces central pixel with this median value.
+	b. Bilateral Filtering:
+	   Used the function: cv2.bilateralFilter(img,9,75,75) to remove noise while keeping edges sharp.
+	c. Embossing:
+	   Used the functions: kernel_emboss = np.array([[0,-1,-1],[1,0,-1],[1,1,0]]) to define the 3x3 kernel and applied the kernels to the image and added an offset of 128 to achieve the embossing effect: cv2.filter2D(img, -1, kernel_emboss) + 128. This same as 4.e.
+	d. Erosion:
+	   Used the functions: kernel = np.ones((5,5), np.uint8) to define 5x5 kernel with the desired data type as unsigned integer and img_erosion = cv2.erode(img, kernel, iterations=1) to modify geometric structures in the image. The third argument is the number of iterations to erode the image.
+	e. Dilation:
+	   Used the functions: kernel = np.ones((5,5), np.uint8) to do same as 6.d. and cv2.dilate(img, kernel, iterations=1) to dilate the image 1 time.
+	f. Enhancing Contrast:
+	   Used the function: histeq = cv2.equalizeHist(img) to enhance the contrast. This function uses Histogram Equalization process to achieve this. equalizeHist() function is applicable to gray scale images. To improve the brightness, I adjusted the pixel values here.

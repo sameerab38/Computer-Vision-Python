@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CS682 HW2</title>
+</head>
+<body>
+<h1 style="text-align:center">HW2 Report</h1>
+
+<br/>
+<h3>Exercise 1.1</h3>
+<p>I created the following file dialog to load images:</p>
+<img src="Img2.png" alt="Img2.png" width="400" height="300" style="width:auto;">
+
+<p>Loaded the below image and displayed it in an image window:</p>
+<img src="Img3.png" alt="Img3.png" width="500" height="400" style="width:auto;">
+</br></br>
+
+<p>Following are the three color histograms of the three color channels blue, green and red respectively:</p>
+<table>
+<tr>
+<td><img src="Img4.png" alt="Img4.png" width="400" height="400" style="width:auto;"></td>
+<td><img src="Img5.png" alt="Img5.png" width="400" height="400" style="width:auto;"></td>
+<td><img src="Img6.png" alt="Img6.png" width="400" height="400" style="width:auto;"></td>
+</tr>
+</table>
+
+<p>When I move the mouse cursor within the image, the <strong>current pixel location</strong>, its <strong>3 color channels intensities</strong> and the <strong>average intensity</strong> are displayed in a separate command window. When the left mouse button is clicked, a <strong>11x11 square window</strong> around this pixel is displayed with a </strong>border of 2 pixel padding</strong>. The 11x11 square window is enlarged for easy visibility. Also, this small window's <strong>mean</strong> and <strong>standard deviation</strong> are displayed in the command window. Please refer to the figures below:</p>
+<table>
+<tr>
+<h4>Example 1:</h4>
+<img src="Img7.png" alt="Img7.png" height="400" style="width:auto;">
+<h4>Example 2:</h4>
+<img src="Img9.png" alt="Img9.png" height="400" style="width:auto;">
+</tr>
+</table>
+<br/><br/>
+
+<p>Following are the three color histograms of the three color channels blue, green and red respectively for the cropped image in Example 1:</p>
+<table>
+<tr>
+<td><img src="Img1Histb.png" alt="Img1Histb.png" height="400" style="width:auto;"></td>
+<td><img src="Img1Histg.png" alt="Img1Histg.png" height="400" style="width:auto;"></td>
+<td><img src="Img1Histr.png" alt="Img1Histr.png" height="400" style="width:auto;"></td>
+</tr>
+</table>
+<br/><br/>
+
+<p>Following are the three color histograms of the three color channels blue, green and red respectively for the cropped image in Example 2:</p>
+<table>
+<tr>
+<td><img src="Img3Histb.png" alt="Img3Histb.png" width="500" height="400" style="width:auto;"></td>
+<td><img src="Img3Histg.png" alt="Img3Histg.png" width="500" height="400" style="width:auto;"></td>
+<td><img src="Img3Histr.png" alt="Img3Histr.png" width="500" height="400" style="width:auto;"></td>
+</tr>
+</table>
+
+<p><strong>Comparison of Example 1 and Example 2:</strong></p>
+<p>The first example is cropped from the cheekbone and hair border point of the women in the picture. The second example is cropped at one of the moles on her cheek. As we can see:</p>
+<ul>
+<li>The average intensity of the first example is very less than the average intensity of example 2. This is because the example 1 is less homogeneous than example 2.</li>
+<li>The standard deviations of b,g,r channels of example 1 are higher than b,g,r channels of example 2 showing that the colors are inhomogeneous in example 1 when compared to example 2.</li>
+<li>The individual color histograms of these two examples also tell the same. There are single peaks in each of the color histograms in example 2 showing that there is one dominant color.</li>
+</ul>
+<br/><br/>
+
+<h3>Exercise 1.2</h3>
+<p>For this part I used the images from ST2MainHall4.zip archive</p>
+<p>I wrote a function to build color histograms for all images in the sequence with <strong>512 bins</strong>. Following are two examples of the histograms:</p>
+
+<table>
+<tr>
+<td><h4 style="text-align:center">ST2MainHall4003.jpg</h4></td>
+<td><h4 style="text-align:center">ST2MainHall4038.jpg</h4></td>
+</tr>
+<tr>
+<td><img src="Img11_Hist4003.png" alt="Img11_Hist4003.png" height="400" style="width:auto;"></td>
+<td><img src="Img12_Hist4038.png" alt="Img12_Hist4038.png" height="400" style="width:auto;"></td>
+</tr>
+</table>
+
+<p>Wrote two functions: hist_intersection() and chi_squared_measure() to test histogram comparison on the image sequence of 99 images. Following are the results visualized as a heatmap:</p>
+<table>
+<tr>
+<td><h4 style="text-align:center">Histogram intersection method</h4></td>
+<td><h4 style="text-align:center">Chi-squared measure</h4></td>
+</tr>
+<tr>
+<td><img src="IntHeatmap.png" alt="IntHeatmap.png" height="400" style="width:auto;"></td>
+<td><img src="ChiHeatmap.png" alt="ChiHeatmap.png" height="400" style="width:auto;"></td>
+</tr>
+</table>
+<br/><br/>
+
+<p><b>Please click <a href="HW2Script.py"><em>here</em></a> to view the python script page which produced the above results.</b></p>
+</body>
+</html>
