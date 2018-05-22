@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CS682 HW4</title>
+</head>
+<body>
+<h1 style="text-align:center">HW4 Report</h1>
+
+<br/>
+<h2>Problem 1</h2>
+<p>Following are the examples of computed image boundaries/contours:</p>
+<table>
+<tr>
+<td><h3>00000076.png:</h3>
+<img src="ContourImages/00000076.png" alt="00000076.png" height="350" style="width:auto;"></td>
+<td><h3>00000115.png:</h3>
+<img src="ContourImages/00000115.png" alt="00000115.png" height="350" style="width:auto;"></td>
+</tr>
+</table>
+</br></br>
+
+<p>Following are the examples of computed polygonal approximation of computed boundaries with epsilon = 1.414:</p>
+<table>
+<tr>
+<td><h3>00000076.png:</h3>
+<img src="VerticesImages/00000076.png" alt="00000076.png" height="350" style="width:auto;"></td>
+<td><h3>00000115.png:</h3>
+<img src="VerticesImages/00000115.png" alt="00000115.png" height="350" style="width:auto;"></td>
+</tr>
+</table>
+</br></br>
+
+<p>Following are the examples of computed convex hull:</p>
+<table>
+<tr>
+<td><h3>00000076.png:</h3>
+<img src="HullImages/00000076.png" alt="00000076.png" height="350" style="width:auto;"></td>
+<td><h3>00000115.png:</h3>
+<img src="HullImages/00000115.png" alt="00000115.png" height="350" style="width:auto;"></td>
+</tr>
+</table>
+</br></br>
+
+<h2>Problem 2</h2>
+<p>Convex hull deficits area = convexHullArea - area under image boundaries</p>
+<p>Following is the screenshot of  table with computed values for few frames:</p>
+<img src="Data.png" alt="Data.png" style="width:auto;">
+</br>
+
+<p><b>Please click <a href="ComputedValues.xlsx"><em>here</em></a> to view the Entire table.</b></p>
+
+<h2>Problem 3</h2>
+<p>Following are the examples of computed curvatures along the boundaries:</p>
+<table>
+<tr>
+<td><h3>Curvature73.png:</h3>
+<img src="Curvature52.png" alt="Curvature52.png" style="width:auto;"></td>
+<td><h3>Curvature115.png:</h3>
+<img src="Curvature73.png" alt="Curvature73.png" style="width:auto;"></td>
+</tr>
+</table>
+<p>The bigger circles in the above images represent local maxima points.</p>
+</br></br>
+
+<h2>Problem 4</h2>
+<p>Following are the examples of computed distance transform images of their corresponding silhoutte boundaries:</p>
+<table>
+<tr>
+<td><h3>DT73.png:</h3>
+<img src="DT52.png" alt="DT52.png" style="width:auto;"></td>
+<td><h3>DT115.png:</h3>
+<img src="DT73.png" alt="DT73.png" style="width:auto;"></td>
+</tr>
+</table>
+
+<h2>Problem 5</h2>
+<p>Following is the heat map of computed chamfer matching on all pairs of gait images in the provided sequence:</p>
+<img src="ChamferMatchHeatMap.png" alt="ChamferMatchHeatMap.png" style="width:auto;">
+
+<h2>Problem 6</h2>
+<p><b>a.</b> Yes, there is a periodicity in how it shows in results. In part 2, the perimeter and Area of convexity deficits values are following the same pattern for about every 30 images. The plotted values are shown below:</p>
+<table>
+<tr>
+<td><h3>Perimeter.png:</h3>
+<img src="Perimeter.png" alt="Perimeter.png" style="width:auto;"></td>
+</tr>
+<tr>
+<td><h3>AreaOfDeficits.png:</h3>
+<img src="AreaOfDeficits.png" alt="AreaOfDeficits.png" style="width:auto;"></td>
+</tr>
+</table>
+<p>Also, in part 5, for a period of every 30 images, we see the same pattern of colors.</p>
+
+<p><b>b.</b> By computing the maximum and mimimum values of second order moments, M02 and M20, I observed that the low values correspond to narrow profiles and hogh values correspond to wide profiles. Following are the examples of each:</p>
+<h3>00000053.png (M02 = 19559205.5, M20 = 7886253.5):</h3>
+<img src="GaitImages/00000053.png" alt="00000053.png" style="width:auto;">
+<h3>00000169.png (M02 = 11738556.25, M20 = 3989420.25):</h3>
+<img src="GaitImages/00000169.png" alt="00000169.png" style="width:auto;">
+
+<p><b>c.</b> Yes. There is a joint at the local maxima and the local minima(the lower negative values) of the curvature. Segment the body parts according to these by segmenting the boundary curve.</p>
+
+<p><b>Please click <a href="HW4Script.py"><em>here</em></a> to view the python script page which produced the above results.</b></p>
+</body>
+</html>
